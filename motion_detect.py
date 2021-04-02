@@ -1,14 +1,16 @@
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture('Front.mp4')
+cap = cv2.VideoCapture('Front.mp4') #Video file path
+# cap = cv2.VideoCapture(0) #use web cam
+
 frame_width = int( cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 
 frame_height =int( cap.get( cv2.CAP_PROP_FRAME_HEIGHT))
 
 fourcc = cv2.VideoWriter_fourcc('X','V','I','D')
 
-out = cv2.VideoWriter("output.avi", fourcc, 5.0, (1280,720))
+out = cv2.VideoWriter("output.avi", fourcc, 5.0, (1280,720)) #output file path
 
 ret, frame1 = cap.read()
 ret, frame2 = cap.read()
